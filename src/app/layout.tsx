@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { ActiveThemeProvider } from "@/components/active-theme";
 import { Toaster } from "@/components/toaster";
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,12 +33,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
-            <NuqsAdapter>
-              <ActiveThemeProvider>
-                {children}
-                <Toaster position="top-center" />
-              </ActiveThemeProvider>
-            </NuqsAdapter>
+          <NuqsAdapter>
+            <ActiveThemeProvider>
+              {children}
+              <Analytics />
+              <Toaster position="top-center" />
+            </ActiveThemeProvider>
+          </NuqsAdapter>
         </ThemeProvider>
       </body>
     </html>
