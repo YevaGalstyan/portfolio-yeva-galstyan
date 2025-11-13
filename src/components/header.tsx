@@ -7,9 +7,8 @@ import { MainNav } from "./main-nav";
 import { GitHubLink } from "./ui/github-link";
 import { Separator } from "./ui/separator";
 import { ModeSwitcher } from "./ui/mode-switcher";
-import { FileUser, Linkedin } from "lucide-react";
 import { LinkedInLink } from "./ui/linkedin-link";
-import { ViewCVModal } from "./view-cv";
+import { ViewCV } from "./view-cv";
 
 export function Header() {
 
@@ -34,7 +33,7 @@ export function Header() {
                     </Button>
                     <MainNav items={siteConfig.navItems} className="hidden lg:flex px-2" />
                     <div className="ml-auto flex items-center gap-2 md:flex-1 md:justify-end">
-                        <ViewCVModal pdfUrl="/cv.pdf" />
+                        <ViewCV pdfUrl="/cv.pdf" />
                         <GitHubLink />
                         <LinkedInLink />
                         <Separator orientation="vertical" />

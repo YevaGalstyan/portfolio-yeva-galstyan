@@ -73,11 +73,8 @@ export function MobileNav({
                             Menu
                         </div>
                         <div className="flex flex-col gap-3">
-                            <MobileLink href="/" onOpenChange={setOpen}>
-                                Home
-                            </MobileLink>
                             {items.map((item, index) => (
-                                <MobileLink key={index} href={item.href} onOpenChange={setOpen}>
+                                <MobileLink external={false} key={index} href={item.href} onOpenChange={setOpen}>
                                     {item.label}
                                 </MobileLink>
                             ))}
@@ -90,7 +87,7 @@ export function MobileNav({
                         <div className="flex flex-col gap-3">
                             {TOP_LEVEL_SECTIONS.map(({ name, href }) => {
                                 return (
-                                    <MobileLink key={name} href={href} onOpenChange={setOpen}>
+                                    <MobileLink external={true} key={name} href={href} onOpenChange={setOpen}>
                                         {name}
                                     </MobileLink>
                                 )
@@ -105,11 +102,13 @@ export function MobileNav({
 
 function MobileLink({
     href,
+    external,
     onOpenChange,
     className,
     children,
     ...props
 }: LinkProps & {
+    external: boolean,
     onOpenChange?: (open: boolean) => void
     children: React.ReactNode
     className?: string
@@ -117,9 +116,14 @@ function MobileLink({
     const router = useRouter();
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault()
-        window.open(href.toString(), "_blank", "noopener,noreferrer")
-        onOpenChange?.(false)
+        if (external) {
+            e.preventDefault()
+            window.open(href.toString(), "_blank", "noopener,noreferrer")
+            onOpenChange?.(false)
+        } else {
+            onOpenChange?.(false)
+            router.push(href.toString())
+        }
     }
     return (
         <Link

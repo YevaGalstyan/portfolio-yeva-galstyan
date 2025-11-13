@@ -2,11 +2,11 @@
 import { Button } from "./ui/button"
 import { FileUser } from "lucide-react"
 
-interface ReviewCVModalProps {
+interface ReviewCVProps {
   pdfUrl: string
 }
 
-export function ViewCVModal({ pdfUrl }: ReviewCVModalProps) {
+export function ViewCV({ pdfUrl }: ReviewCVProps) {
   return (
     <Button
       asChild

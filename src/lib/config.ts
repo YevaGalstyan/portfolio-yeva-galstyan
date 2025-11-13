@@ -5,6 +5,7 @@ export const siteConfig = {
     description:
         "",
     links: {
+        repoGithub: "https://github.com/YevaGalstyan/portfolio-yeva-galstyan",
         github: "https://github.com/YevaGalstyan",
         linkedIn: "https://www.linkedin.com/in/yeva-galstyan/",
     },
