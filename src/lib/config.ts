@@ -10,19 +10,24 @@ export const siteConfig = {
     },
     navItems: [
         {
-            href: "/about",
-            label: "About"
+            href: "/",
+            label: "Home"
         },
         {
             href: "/experience",
             label: "Experience"
         },
         {
+            href: "/education",
+            label: "Education"
+        },
+        
+        {
             href: "/projects",
             label: "Projects"
         },
         {
-            href: "/Memberships",
+            href: "/memberships",
             label: "Memberships"
         },
         {
