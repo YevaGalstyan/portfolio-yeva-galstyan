@@ -6,8 +6,6 @@ import { LinkedInLink } from "@/components/ui/linkedin-link";
 import { Location } from "@/components/ui/location";
 import { ViewCV } from "@/components/view-cv";
 
-// Please feel free to look over my CV to see a summary of my education and work history, or contact me directly through email or social media.
-
 const title = "Contact Me"
 const description =
   "I am open to project suggestions, eager to engage in tech discussions and forums, and excited to share knowledge. "
