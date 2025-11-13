@@ -32,9 +32,9 @@ export function Header() {
                         </Link>
                     </Button>
                     <MainNav items={siteConfig.navItems} className="hidden lg:flex px-2" />
-                    <div className="ml-auto flex items-center gap-2 md:flex-1 md:justify-end">
-                        <ViewCV pdfUrl="/cv.pdf" />
+                    <div className="ml-auto flex items-center sm:gap-1 gap-0.5 md:flex-1 md:justify-end">
                         <GitHubLink />
+                        <Separator orientation="vertical" />
                         <LinkedInLink />
                         <Separator orientation="vertical" />
                         <ModeSwitcher />
