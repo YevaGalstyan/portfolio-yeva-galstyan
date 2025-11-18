@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation"
 import { Popover, PopoverContent, PopoverTrigger } from "@radix-ui/react-popover"
 import { Button } from "./ui/button"
 import { cn } from "@/lib/utils"
-import { siteConfig } from "@/lib/config"
+import { siteConfig } from "@/lib/siteconfig"
 
 const TOP_LEVEL_SECTIONS = [
     {

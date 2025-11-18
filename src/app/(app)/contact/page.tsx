@@ -4,11 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { GitHubLink } from "@/components/ui/github-link";
 import { LinkedInLink } from "@/components/ui/linkedin-link";
 import { Separator } from "@/components/ui/separator";
-
-
-const title = "Contact Me"
-const description =
-  "I am open to project suggestions, eager to engage in tech discussions and forums, and excited to share knowledge. "
+import contactsConfig from "./contactsConfig";
 
 export default function HomePage() {
   return (
@@ -17,14 +13,14 @@ export default function HomePage() {
         <PageHeaderHeading className="max-w-4xl">
           <div className="flex flex-col items-center gap-1">
             <Avatar className="rounded-lg w-40 h-40">
-              <AvatarImage src="/contact.jpeg" />
+              <AvatarImage src={contactsConfig.contactImage}/>
               <AvatarFallback>YG</AvatarFallback>
             </Avatar>
-            {title}
+            {contactsConfig.title}
           </div>
 
         </PageHeaderHeading>
-        <PageHeaderDescription>{description}</PageHeaderDescription>
+        <PageHeaderDescription>{contactsConfig.description}</PageHeaderDescription>
         <ContactForm />
         <div className="flex items-center">
           <span className="whitespace-nowrap text-neutral-500">or contact me via</span>

@@ -5,17 +5,14 @@ import { LinkedInLink } from "@/components/ui/linkedin-link";
 import { Location } from "@/components/ui/location";
 import { Status, StatusIndicator, StatusLabel } from "@/components/ui/status";
 import { ViewCV } from "@/components/view-cv";
-
-const title = "Hi, I am Yeva Galstyan"
-const description =
-  "A Master's student in Global Software Development at Hochschule Fulda and a working student front-end developer in BASF Ludwigshafen."
+import homeConfig from "./homeConfig";
 
 export default function HomePage() {
   return (
     <div className="flex flex-1 flex-col">
       <PageHeader>
         <Avatar className="rounded-lg w-45 h-45">
-          <AvatarImage src="/prof.jpeg" />
+          <AvatarImage src={homeConfig.homeImage} />
           <AvatarFallback>YG</AvatarFallback>
         </Avatar>
         <div className="flex flex-col items-center sm:flex-row sm:items-center sm:gap-4 gap-2 text-sm">
@@ -33,10 +30,10 @@ export default function HomePage() {
           </div>
         </div>
 
-        <PageHeaderHeading className="max-w-4xl">{title}</PageHeaderHeading>
-        <PageHeaderDescription>{description}</PageHeaderDescription>
+        <PageHeaderHeading className="max-w-4xl">{homeConfig.title}</PageHeaderHeading>
+        <PageHeaderDescription>{homeConfig.description}</PageHeaderDescription>
         <PageActions>
-          <ViewCV pdfUrl="/cv.pdf" />
+          <ViewCV />
           <GitHubLink />
           <LinkedInLink />
         </PageActions>
