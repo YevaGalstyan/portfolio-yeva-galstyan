@@ -1,14 +1,9 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from '../src/app.module';
+import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import serverless from 'serverless-http';
-import express from 'express';
-import { ExpressAdapter } from '@nestjs/platform-express';
-
-const expressApp = express();
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, new ExpressAdapter(expressApp));
+  const app = await NestFactory.create(AppModule);
   app.enableCors();
 
   const config = new DocumentBuilder()
@@ -19,11 +14,6 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
-  await app.init(); // IMPORTANT: no listen(), just init()
+  await app.listen(3001);
 }
-
-bootstrap().catch(err => {
-  console.error('NestJS bootstrap failed', err);
-});
-
-export default serverless(expressApp);
+bootstrap();
