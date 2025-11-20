@@ -3,7 +3,7 @@ import { AppModule } from '../src/app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import serverless from 'serverless-http';
 import express from 'express';
-import { ExpressAdapter } from '@nestjs/platform-express/adapters';
+import { ExpressAdapter } from '@nestjs/platform-express';
 
 const expressApp = express();
 
@@ -26,4 +26,4 @@ bootstrap().catch(err => {
   console.error('NestJS bootstrap failed', err);
 });
 
-export const handler = serverless(expressApp);
+export default serverless(expressApp);
