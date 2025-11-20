@@ -1,3 +1,5 @@
+"use client";
+
 import { PageActions, PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/components/page-header";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { GitHubLink } from "@/components/ui/github-link";
@@ -8,6 +10,7 @@ import { ViewCV } from "@/components/view-cv";
 import homeConfig from "./homeConfig";
 
 export default function HomePage() {
+
   return (
     <div className="flex flex-1 flex-col">
       <PageHeader>
