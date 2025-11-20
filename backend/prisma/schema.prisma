@@ -1,81 +1,31 @@
+generator client {
+  provider      = "prisma-client-js"
+}
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-generator client {
-  provider = "prisma-client-js"
-}
-
 model ProjectOverview {
   id          Int       @id @default(autoincrement())
+  projectId   Int       @unique
   title       String
-  images      String[]
   description String?
-  startDate   DateTime?
   endDate     DateTime?
   githubLink  String?
+  startDate   DateTime?
+  images      String[]
   project     Project   @relation(fields: [projectId], references: [id])
-  projectId   Int       @unique
 }
 
 model Project {
   id          Int              @id @default(autoincrement())
-  title       String
-  image       String
   description String?
-  startDate   DateTime?
   endDate     DateTime?
   githubLink  String?
+  startDate   DateTime?
+  title       String
+  image       String
   overview    ProjectOverview?
 }
-
-// model Position {
-//   id           Int      @id @default(autoincrement())
-//   positionName String
-//   period       String?
-//   companyName  String
-//   location     String
-//   description  String
-//   skills       String[]
-//   url          String?
-// }
-
-// model Membership {
-//   id            Int            @id @default(autoincrement())
-//   type          MembershipType
-//   imgUrl        String
-//   url           String
-//   positionName  String
-//   period        String
-//   name          String
-//   location      String
-//   description   String?
-//   attachedFiles Attachment[]
-//   links         Link[]
-//   skills        String[]
-// }
-
-// enum MembershipType {
-//   INTERNSHIP
-//   TRAINING
-//   EDUCATION
-//   MEMBERSHIP
-//   CONFERENCE
-// }
-
-// model Attachment {
-//   id           Int        @id @default(autoincrement())
-//   membership   Membership @relation(fields: [membershipId], references: [id])
-//   membershipId Int
-//   fileName     String
-//   fileLink     String
-// }
-
-// model Link {
-//   id           Int        @id @default(autoincrement())
-//   membership   Membership @relation(fields: [membershipId], references: [id])
-//   membershipId Int
-//   icon         String
-//   link         String
-// }
