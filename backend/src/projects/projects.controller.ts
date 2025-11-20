@@ -1,23 +1,26 @@
-import { Controller, Get, Param, Post, Body } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { ProjectsService } from './projects.service';
-import { Prisma } from '@prisma/client';
+import { ApiTags, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
+import { Project } from '@prisma/client';
 
+@ApiTags('projects')
 @Controller('projects')
 export class ProjectsController {
-  constructor(private readonly projectsService: ProjectsService) {}
+  constructor(private readonly projectsService: ProjectsService) { }
 
   @Get()
-  getAll() {
+  @ApiOperation({ summary: 'Get all projects' })
+  @ApiResponse({ status: 200, description: 'List of all projects' })
+  getAll(): Promise<Project[]> {
     return this.projectsService.getAllProjects();
   }
 
   @Get(':id')
-  getOne(@Param('id') id: string) {
+  @ApiOperation({ summary: 'Get a single project by ID' })
+  @ApiParam({ name: 'id', description: 'Project ID', type: Number })
+  @ApiResponse({ status: 200, description: 'Project found' })
+  @ApiResponse({ status: 404, description: 'Project not found' })
+  getOne(@Param('id') id: string): Promise<Project | null> {
     return this.projectsService.getProject(Number(id));
-  }
-
-  @Post()
-  create(@Body() data: Prisma.ProjectCreateInput) {
-    return this.projectsService.createProject(data);
   }
 }
