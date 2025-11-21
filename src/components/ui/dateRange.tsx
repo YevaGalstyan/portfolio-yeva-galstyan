@@ -21,7 +21,7 @@ export function DateRange({ startDate, endDate, useDays }: ProjectDateRangeProps
   return (
     <div className="flex gap-2 items-center">
       <Badge variant="default" className="px-2 py-1 text-xs">
-        <Calendar className="" />
+        <Calendar />
         {formatMonthYear(startDate)}
         <span className="text-xs text-muted-foreground">→</span>
         {endDate ? formatMonthYear(endDate) : "Present"}

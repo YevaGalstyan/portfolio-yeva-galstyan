@@ -1,5 +1,3 @@
-import { JSX } from "react";
-
 export interface Project {
   id: number;
   title: string;
@@ -9,23 +7,17 @@ export interface Project {
   startDate: Date;
   githubLink: string | null;
   useDays: boolean;
-  techStack: TechStack[] | null;
+  techstack: TechStackEnum[] | null;
 }
 
-export enum TechStack {
+export enum TechStackEnum {
   Angualar = "Angular",
-  TypeScript = "TypeScript",
+  TypeScript = "Typescript",
+  Sass = "Sass",
+  Figma = "Figma",
+
   Azure = "Azure",
   React = "React",
   Node = "Node",
   PostgreSQL = "PostgreSQL",
 }
-
-export const techIcons: Record<string, JSX.Element> = {
-  // Angular: <SiAngular className="w-4 h-4" />,
-  // TypeScript: <SiTypescript className="w-4 h-4" />,
-  // Azure: <SiMicrosoftazure className="w-4 h-4" />,
-  // React: <SiReact className="w-4 h-4" />,
-  // Node: <SiNodedotjs className="w-4 h-4" />,
-  // PostgreSQL: <SiPostgresql className="w-4 h-4" />,
-};

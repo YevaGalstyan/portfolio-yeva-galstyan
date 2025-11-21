@@ -5,6 +5,7 @@ import { GitHubLink } from "./ui/github-link";
 import { Badge } from "./ui/badge";
 import { DateRange } from "./ui/dateRange";
 import { ViewInnerPage } from "./ui/view-inner-page";
+import { TechStackBadges } from "./ui/tech-stack";
 
 interface ProjectCardProps {
     project: Project;
@@ -35,6 +36,7 @@ export function ProjectOverview({ project }: ProjectCardProps) {
                         {project.description}
                     </CardDescription>
                 )}
+                {project.techstack && <TechStackBadges techStack={project.techstack} />}
             </CardHeader>
 
             {/* Card Footer */}

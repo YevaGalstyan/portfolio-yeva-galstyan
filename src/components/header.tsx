@@ -1,13 +1,13 @@
 import Link from "next/link"
 import { Button } from "./ui/button"
 import { MobileNav } from "./mobile-nav"
-import { Icons } from "./ui/icons";
 import { siteConfig } from "@/lib/siteconfig";
 import { MainNav } from "./main-nav";
 import { GitHubLink } from "./ui/github-link";
 import { Separator } from "./ui/separator";
 import { ModeSwitcher } from "./ui/mode-switcher";
 import { LinkedInLink } from "./ui/linkedin-link";
+import { Bird } from "lucide-react";
 
 export function Header() {
 
@@ -26,7 +26,7 @@ export function Header() {
                         className="hidden size-12 lg:flex"
                     >
                         <Link href="/">
-                            <Icons.logo className="size-6" />
+                            <Bird className="size-6" />
                         </Link>
                     </Button>
                     <MainNav items={siteConfig.navItems} className="hidden lg:flex px-2" />
