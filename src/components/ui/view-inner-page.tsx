@@ -2,7 +2,6 @@ import * as React from "react"
 import Link from "next/link"
 
 import { siteConfig } from "@/lib/siteconfig"
-import { Icons } from "./icons"
 import { Button } from "./button"
 import { Tooltip, TooltipContent, TooltipTrigger } from "./tooltip"
 import { SquareArrowOutUpRight } from "lucide-react"
