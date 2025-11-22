@@ -1,7 +1,7 @@
 "use client";
 import { PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/components/page-header";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-import projectConfig from "./projectsConfig";
+import projectConfig from "./projects-config";
 import { ProjectOverview } from "@/components/project-overview";
 import { useEffect } from "react";
 import { useProjectStore } from "@/lib/zustand/useProjectStore";
@@ -38,7 +38,6 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-
     </div>
   );
 }

@@ -7,7 +7,7 @@ import { LinkedInLink } from "@/components/ui/linkedin-link";
 import { Location } from "@/components/ui/location";
 import { Status, StatusIndicator, StatusLabel } from "@/components/ui/status";
 import { ViewCV } from "@/components/view-cv";
-import homeConfig from "./homeConfig";
+import homeConfig from "./home-config";
 import RecentProjects from "./recent-projects";
 
 export default function HomePage() {
