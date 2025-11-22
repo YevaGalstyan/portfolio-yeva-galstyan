@@ -8,6 +8,7 @@ export interface Project {
   githubLink: string | null;
   useDays: boolean;
   techstack: TechStackEnum[] | null;
+  hasOverview: boolean;
 }
 
 export enum TechStackEnum {
@@ -15,8 +16,14 @@ export enum TechStackEnum {
   TypeScript = "Typescript",
   Sass = "Sass",
   Figma = "Figma",
-
   Azure = "Azure",
+  AntD = "AntD",
+  Analytics = "Analytics",
+  ViteJs = "ViteJs",
+  Tailwind = "Tailwind",
+  Redux = "Redux",
+  Mapbox = "Mapbox",
+
   React = "React",
   Node = "Node",
   PostgreSQL = "PostgreSQL",

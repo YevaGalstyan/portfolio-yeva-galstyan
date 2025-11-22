@@ -46,7 +46,7 @@ export function ProjectOverview({ project }: ProjectCardProps) {
                         buttonVariant="outline"
                         link={project.githubLink} />
                 )}
-                {project.id && (
+                {project.hasOverview && (
                     <div className="flex flex-1 justify-end-safe">
                         <ViewInnerPage link={`/projects/${project.id}`} />
                     </div>

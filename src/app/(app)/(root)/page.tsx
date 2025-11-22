@@ -8,6 +8,7 @@ import { Location } from "@/components/ui/location";
 import { Status, StatusIndicator, StatusLabel } from "@/components/ui/status";
 import { ViewCV } from "@/components/view-cv";
 import homeConfig from "./homeConfig";
+import RecentProjects from "./recent-projects";
 
 export default function HomePage() {
 
@@ -41,6 +42,12 @@ export default function HomePage() {
           <LinkedInLink />
         </PageActions>
       </PageHeader>
-    </div>
+
+      <div className="w-11/12 md:w-3/4 lg:w-3/4 mx-auto">
+        <div className="container-wrapper section-soft pb-6">
+          <RecentProjects />
+        </div>
+      </div>
+    </div >
   );
 }
