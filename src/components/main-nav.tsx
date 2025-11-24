@@ -5,41 +5,84 @@ import { usePathname } from "next/navigation"
 
 import { cn } from "@/lib/utils"
 import { Button } from "./ui/button"
+import { NavItem } from "@/lib/siteconfig"
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover"
+import { ChevronDown } from "lucide-react"
 
 export function MainNav({
   items,
   className,
   ...props
 }: React.ComponentProps<"nav"> & {
-  items: { href: string; label: string }[]
+  items: NavItem[]
 }) {
   const pathname = usePathname()
 
   return (
     <nav className={cn("items-center gap-2", className)} {...props}>
-      {items.map((item) => {
+      {items.map((item, index) => {
+        const hasChildren = item.children && "children" in item && item.children?.length > 0
         const isActive =
-          pathname === item.href || pathname.startsWith(item.href + "/")
+          pathname === item.href ||
+          pathname.startsWith(item.href + "/") ||
+          (hasChildren && item.children?.some((child) => pathname.startsWith(child.href)))
 
         return (
-          <Button
-            key={item.href}
-            variant={isActive ? "default" : "ghost"}
-            className={cn(
-              "transition-colors",
-              isActive
-                ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                : "text-muted-foreground hover:text-foreground"
+          <div key={index}>
+            {hasChildren ? (
+              <Popover>
+                <PopoverTrigger>
+                  <Button
+                    variant={isActive ? "default" : "ghost"}
+                    asChild
+                    className={cn(
+                      "transition-colors",
+                      isActive
+                        ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                        : "text-muted-foreground hover:text-foreground"
+                    )} size="sm">
+                    <div>
+                      {item.label}
+                      <ChevronDown className="h-4 w-4" />
+                    </div>
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent align="start" className="w-full">
+                  <div className="flex flex-col gap-3">
+                    {item.children?.map((child, childIndex) => (
+                      <div key={childIndex} className="flex flex-col gap-0.5">
+                        <Link
+                          href={child.href}
+                        >
+                          <span className="text-sm font-medium underline">{child.label}</span>
+                        </Link>
+                        <span className="text-sm text-muted-foreground">{child.description}</span>
+                      </div>
+
+                    ))}
+                  </div>
+                </PopoverContent>
+              </Popover>
+            ) : (
+              <Button
+                variant={isActive ? "default" : "ghost"}
+                className={cn(
+                  "transition-colors",
+                  isActive
+                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                    : "text-muted-foreground hover:text-foreground"
+                )}
+                asChild
+                size="sm">
+                <Link
+                  href={item.href}
+                  className={cn(pathname === item.href && "text-primary")}
+                >
+                  {item.label}
+                </Link>
+              </Button>
             )}
-            asChild
-            size="sm">
-            <Link
-              href={item.href}
-              className={cn(pathname === item.href && "text-primary")}
-            >
-              {item.label}
-            </Link>
-          </Button>
+          </div>
         )
       })}
     </nav>

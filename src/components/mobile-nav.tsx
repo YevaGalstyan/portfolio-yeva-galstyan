@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation"
 import { Popover, PopoverContent, PopoverTrigger } from "@radix-ui/react-popover"
 import { Button } from "./ui/button"
 import { cn } from "@/lib/utils"
-import { siteConfig } from "@/lib/siteconfig"
+import { NavItem, siteConfig } from "@/lib/siteconfig"
 
 const TOP_LEVEL_SECTIONS = [
     {
@@ -23,7 +23,7 @@ export function MobileNav({
     items,
     className,
 }: {
-    items: { href: string; label: string }[]
+    items: NavItem[]
     className?: string
 }) {
     const [open, setOpen] = React.useState(false)
@@ -69,11 +69,30 @@ export function MobileNav({
                             Menu
                         </div>
                         <div className="flex flex-col gap-3">
-                            {items.map((item, index) => (
-                                <MobileLink external={false} key={index} href={item.href} onOpenChange={setOpen}>
-                                    {item.label}
-                                </MobileLink>
-                            ))}
+                            {items.map((item, index) => {
+                                const hasChildren = item.children && "children" in item && item.children?.length > 0
+                                return (
+                                    <div key={index}>
+                                        {
+                                            hasChildren ? (
+                                                <div className="flex flex-col gap-3">
+                                                    {
+                                                        item.children?.map((child, childIndex) => (
+                                                            <MobileLink external={false} key={childIndex} href={child.href} onOpenChange={setOpen}>
+                                                                {child.label}
+                                                            </MobileLink>
+                                                        ))
+                                                    }
+                                                </div>
+                                            ) : (
+                                                <MobileLink external={false} key={index} href={item.href} onOpenChange={setOpen}>
+                                                    {item.label}
+                                                </MobileLink>
+                                            )
+                                        }
+                                    </div>
+                                )
+                            })}
                         </div>
                     </div>
                     <div className="flex flex-col gap-4">

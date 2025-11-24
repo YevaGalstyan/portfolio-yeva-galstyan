@@ -1,4 +1,22 @@
-export const siteConfig = {
+export type NavItem = {
+    href: string
+    label: string
+    description?: string
+    children?: NavItem[]
+}
+
+export type SiteConfig = {
+    name: string
+    links: {
+        repoGithub: string
+        github: string
+        linkedIn: string
+        cv: string
+    }
+    navItems: NavItem[]
+}
+
+export const siteConfig: SiteConfig = {
     name: "YG/Portfolio",
     links: {
         repoGithub: "https://github.com/YevaGalstyan/portfolio-yeva-galstyan",
@@ -19,14 +37,31 @@ export const siteConfig = {
             href: "/education",
             label: "Education"
         },
-        
+
         {
             href: "/projects",
             label: "Projects"
         },
         {
-            href: "/memberships",
-            label: "Memberships"
+            href: "",
+            label: "Extra",
+            children: [
+                {
+                    href: "/memberships",
+                    label: "Memberships",
+                    description: "Professional and academic organizations"
+                },
+                {
+                    href: "/trainings",
+                    label: "Trainings",
+                    description: "Completed programs and certifications"
+                },
+                {
+                    href: "/seminars",
+                    label: "Seminars",
+                    description: "Workshops and seminars I've attended"
+                }
+            ]
         },
         {
             href: "/contact",

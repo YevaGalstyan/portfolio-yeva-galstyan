@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function RecentProjects() {
   const { projects, loading } = useProjectStore();
 
-  const skeletonArray = [1, 2, 3, 4, 5, 6];
+  const skeletonArray = [1, 2, 3 ];
   return (
     <div className="flex flex-col gap-3">
       <div className="flex justify-between">

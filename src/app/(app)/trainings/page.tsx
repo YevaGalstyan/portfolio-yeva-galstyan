@@ -1,17 +1,17 @@
 import { PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/components/page-header";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-import educationConfig from "./education-config";
+import trainingsConfig from "./trainings-config";
 
 export default function HomePage() {
   return (
     <div className="flex flex-1 flex-col">
       <PageHeader className="py-0">
         <Avatar className="rounded-lg w-40 h-40">
-          <AvatarImage src={educationConfig.homeImage} />
+          <AvatarImage src={trainingsConfig.homeImage} />
           <AvatarFallback>YG</AvatarFallback>
         </Avatar>
-        <PageHeaderHeading className="max-w-4xl">{educationConfig.title}</PageHeaderHeading>
-        <PageHeaderDescription>{educationConfig.description}</PageHeaderDescription>
+        <PageHeaderHeading className="max-w-4xl">{trainingsConfig.title}</PageHeaderHeading>
+        <PageHeaderDescription>{trainingsConfig.description}</PageHeaderDescription>
       </PageHeader>
 
       {/* <div className="w-11/12 md:w-3/4 lg:w-3/4 mx-auto">
