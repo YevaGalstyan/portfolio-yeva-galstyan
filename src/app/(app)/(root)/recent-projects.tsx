@@ -1,3 +1,5 @@
+"use client";
+
 import { useProjectStore } from "@/lib/zustand/useProjectStore";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ProjectOverview } from "@/components/project-overview";
@@ -27,7 +29,7 @@ export default function RecentProjects() {
       <div className="grid gap-8 py-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 xl:gap-6 2xl:gap-8">
         {loading
           ? skeletonArray.map((i) => (
-            <div key={i} className="w-full flex flex-col p-4 border-2 border-dashed border-border rounded-lg animate-pulse">
+            <div key={i} className="w-full flex flex-col p-4 border border-dashed border-border rounded-lg animate-pulse">
               <Skeleton className="h-48 w-full rounded-lg mb-2" />
               <Skeleton className="h-6 w-3/4 mb-2" />
               <Skeleton className="h-4 w-full" />

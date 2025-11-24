@@ -3,6 +3,8 @@
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { AppleHelloEnglishEffect } from "@/components/ui/hello-effect";
+import { fetchExperience } from "@/lib/supabase/service";
+import { useExperienceStore } from "@/lib/zustand/useExperienceStore";
 import { useProjectStore } from "@/lib/zustand/useProjectStore";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -13,9 +15,11 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const handleSplashClick = () => setShowSplash(false);
 
   const { fetch: fetchProjectData } = useProjectStore();
+  const { fetch: fetchExperienceData } = useExperienceStore();
 
   useEffect(() => {
     fetchProjectData();
+    fetchExperienceData();  
   }, []);
 
   return (

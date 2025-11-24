@@ -13,7 +13,7 @@ interface ProjectCardProps {
 
 export function ProjectOverview({ project }: ProjectCardProps) {
     return (
-        <Card className="w-full flex flex-col p-4 border-2 border-dashed rounded-lg">
+        <Card className="w-full flex flex-col p-4 border border-dashed rounded-lg">
             {/* Card Content */}
             <CardHeader className="flex-1 p-0">
                 {project.image && (
@@ -40,7 +40,7 @@ export function ProjectOverview({ project }: ProjectCardProps) {
             </CardHeader>
 
             {/* Card Footer */}
-            <CardFooter className="px-0 flex gap-2 justify-between">
+            <CardFooter className="px-0 flex gap-2 justify-between md::min-h-8 lg:min-h-8 xl:min-h-8">
                 {project.githubLink && (
                     <GitHubLink
                         buttonVariant="outline"

@@ -1,0 +1,103 @@
+import { Button } from "./ui/button";
+import { Card, CardDescription, CardHeader, CardTitle, CardFooter, CardContent } from "./ui/card";
+import { DateRange } from "./ui/dateRange";
+import { Experience } from "@/types/experience";
+import { useState } from "react";
+import { Location } from "./ui/location";
+import { LinkIcon } from "lucide-react";
+import Link from "next/link"
+
+interface ExperienceCardProps {
+    experience: Experience;
+}
+
+export function ExperienceOverview({ experience }: ExperienceCardProps) {
+    const [expanded, setExpanded] = useState(false);
+
+    return (
+        <Card className="w-full p-6 border rounded-lg gap-3">
+            <div className="flex flex-row md:flex-row gap-4">
+                {/* LEFT SIDE: IMAGE */}
+                {experience.company_image && (
+                    <div className="h-20 w-20 md:h-24 md:w-24 overflow-hidden rounded-lg border border-accent p-1 shrink-0">
+                        <img
+                            src={experience.company_image}
+                            alt={experience.title}
+                            className="h-full w-full object-cover"
+                        />
+                    </div>
+                )}
+
+                {/* RIGHT SIDE: TITLE + META (NO DESCRIPTION ON MOBILE) */}
+                <div className="flex flex-col flex-1 gap-3">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                        <CardTitle className="flex flex-wrap gap-1 items-center">
+                            <span className="text-md font-semibold">{experience.title}</span>
+                            <span className="text-md font-normal">at {experience.company_title}</span>
+
+                            {experience.company_link && (
+                                <Link href={experience.company_link} target="_blank" rel="noopener noreferrer">
+                                    <LinkIcon className="w-4 h-4" />
+                                </Link>
+                            )}
+                        </CardTitle>
+
+                        <div className="flex gap-2 flex-wrap">
+                            {experience.location && <Location location={experience.location} />}
+                            <DateRange startDate={experience.startDate} endDate={experience.endDate} />
+                        </div>
+                    </div>
+
+                    {experience.description && (
+                        <div className="relative hidden md:block">
+                            <CardDescription
+                                className={`text-sm text-muted-foreground transition-all duration-200 ${expanded ? "" : "line-clamp-2"
+                                    }`}
+                            >
+                                {experience.description}
+                            </CardDescription>
+
+                            {!expanded && (
+                                <div className="absolute bottom-0 right-0 bg-background pl-0.5">
+                                    <Button
+                                        variant="ghost"
+                                        size="sm"
+                                        className="cursor-pointer text-primary h-auto hover:bg-transparent hover:text-primary"
+                                        onClick={() => setExpanded(true)}
+                                    >
+                                        Read more
+                                    </Button>
+                                </div>
+                            )}
+                        </div>
+                    )}
+                </div>
+            </div>
+
+            {/* DESCRIPTION (ONLY UNDER EVERYTHING ON MOBILE, INLINE ON DESKTOP) */}
+            {experience.description && (
+                <div className="relative mt-1 block md:hidden">
+                    <CardDescription
+                        className={`text-sm text-muted-foreground transition-all duration-200 ${expanded ? "" : "line-clamp-2"
+                            }`}
+                    >
+                        {experience.description}
+                    </CardDescription>
+
+                    {!expanded && (
+                        <div className="absolute bottom-0 right-0 bg-background pl-0.5">
+                            <Button
+                                variant="ghost"
+                                size="sm"
+                                className="cursor-pointer text-primary h-auto hover:bg-transparent hover:text-primary"
+                                onClick={() => setExpanded(true)}
+                            >
+                                Read more
+                            </Button>
+                        </div>
+                    )}
+                </div>
+            )}
+        </Card>
+    );
+}

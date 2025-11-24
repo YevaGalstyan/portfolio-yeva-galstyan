@@ -24,9 +24,7 @@ export function MainNav({
         const hasChildren = item.children && "children" in item && item.children?.length > 0
         const isActive =
           pathname === item.href ||
-          pathname.startsWith(item.href + "/") ||
           (hasChildren && item.children?.some((child) => pathname.startsWith(child.href)))
-
         return (
           <div key={index}>
             {hasChildren ? (

@@ -1,3 +1,4 @@
+import { Experience } from "@/types/experience";
 import { Project } from "@/types/project";
 import { createClient } from "@supabase/supabase-js";
 
@@ -10,6 +11,15 @@ export const fetchProjects = async (): Promise<Project[]> => {
   const { data, error } = await supabase.from<string, Project>("Project").select("*").order('startDate', { ascending: false });
   if (error) {
     console.error("Supabase fetchProjects error:", error);
+    return [];
+  }
+  return data ?? [];
+};
+
+export const fetchExperience = async (): Promise<Experience[]> => {
+  const { data, error } = await supabase.from<string, Experience>("Experience").select("*");
+  if (error) {
+    console.error("Supabase fetchExperience error:", error);
     return [];
   }
   return data ?? [];
