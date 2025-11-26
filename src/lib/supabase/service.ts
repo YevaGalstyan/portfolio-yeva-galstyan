@@ -17,7 +17,7 @@ export const fetchProjects = async (): Promise<Project[]> => {
 };
 
 export const fetchExperience = async (): Promise<Experience[]> => {
-  const { data, error } = await supabase.from<string, Experience>("Experience").select("*");
+  const { data, error } = await supabase.from<string, Experience>("Experience").select("*").order('startDate', { ascending: false });
   if (error) {
     console.error("Supabase fetchExperience error:", error);
     return [];

@@ -12,7 +12,6 @@ interface ExperienceCardProps {
 }
 
 export function ExperienceOverview({ experience }: ExperienceCardProps) {
-    const [expanded, setExpanded] = useState(false);
 
     return (
         <Card className="w-full p-6 border rounded-lg gap-3">
@@ -33,11 +32,15 @@ export function ExperienceOverview({ experience }: ExperienceCardProps) {
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
                         <CardTitle className="flex flex-wrap gap-1 items-center">
                             <span className="text-md font-semibold">{experience.title}</span>
-                            <span className="text-md font-normal">at {experience.company_title}</span>
+                            <span className="text-md font-normal">at </span>
 
                             {experience.company_link && (
                                 <Link href={experience.company_link} target="_blank" rel="noopener noreferrer">
-                                    <LinkIcon className="w-4 h-4" />
+                                    <div className="flex gap-1 hover:underline">
+                                        <span className="text-md font-normal">{experience.company_title}</span>
+                                        <LinkIcon className="w-4 h-4" />
+                                    </div>
+
                                 </Link>
                             )}
                         </CardTitle>
@@ -51,24 +54,11 @@ export function ExperienceOverview({ experience }: ExperienceCardProps) {
                     {experience.description && (
                         <div className="relative hidden md:block">
                             <CardDescription
-                                className={`text-sm text-muted-foreground transition-all duration-200 ${expanded ? "" : "line-clamp-2"
+                                className={`text-sm text-muted-foreground"
                                     }`}
                             >
                                 {experience.description}
                             </CardDescription>
-
-                            {!expanded && (
-                                <div className="absolute bottom-0 right-0 bg-background pl-0.5">
-                                    <Button
-                                        variant="ghost"
-                                        size="sm"
-                                        className="cursor-pointer text-primary h-auto hover:bg-transparent hover:text-primary"
-                                        onClick={() => setExpanded(true)}
-                                    >
-                                        Read more
-                                    </Button>
-                                </div>
-                            )}
                         </div>
                     )}
                 </div>
@@ -78,24 +68,11 @@ export function ExperienceOverview({ experience }: ExperienceCardProps) {
             {experience.description && (
                 <div className="relative mt-1 block md:hidden">
                     <CardDescription
-                        className={`text-sm text-muted-foreground transition-all duration-200 ${expanded ? "" : "line-clamp-2"
+                        className={`text-sm text-muted-foreground"
                             }`}
                     >
                         {experience.description}
                     </CardDescription>
-
-                    {!expanded && (
-                        <div className="absolute bottom-0 right-0 bg-background pl-0.5">
-                            <Button
-                                variant="ghost"
-                                size="sm"
-                                className="cursor-pointer text-primary h-auto hover:bg-transparent hover:text-primary"
-                                onClick={() => setExpanded(true)}
-                            >
-                                Read more
-                            </Button>
-                        </div>
-                    )}
                 </div>
             )}
         </Card>
