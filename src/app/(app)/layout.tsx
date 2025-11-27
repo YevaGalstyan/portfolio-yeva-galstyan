@@ -2,11 +2,9 @@
 
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { AppleHelloEnglishEffect } from "@/components/ui/hello-effect";
-import { fetchExperience } from "@/lib/supabase/service";
 import { useExperienceStore } from "@/lib/zustand/useExperienceStore";
 import { useProjectStore } from "@/lib/zustand/useProjectStore";
-import Image from "next/image";
+import { useTechStackStore } from "@/lib/zustand/useTechStack";
 import { useEffect, useState } from "react";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
@@ -16,10 +14,12 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
   const { fetch: fetchProjectData } = useProjectStore();
   const { fetch: fetchExperienceData } = useExperienceStore();
+  const { fetch: fetchTechStackData } = useTechStackStore();
 
   useEffect(() => {
     fetchProjectData();
-    fetchExperienceData();  
+    fetchExperienceData(); 
+    fetchTechStackData();
   }, []);
 
   return (

@@ -1,3 +1,5 @@
+import { TechStackEnum } from "./techStack";
+
 export interface Project {
   id: number;
   title: string;
@@ -9,22 +11,4 @@ export interface Project {
   useDays: boolean;
   techstack: TechStackEnum[] | null;
   hasOverview: boolean;
-}
-
-export enum TechStackEnum {
-  Angualar = "Angular",
-  TypeScript = "Typescript",
-  Sass = "Sass",
-  Figma = "Figma",
-  Azure = "Azure",
-  AntD = "AntD",
-  Analytics = "Analytics",
-  ViteJs = "ViteJs",
-  Tailwind = "Tailwind",
-  Redux = "Redux",
-  Mapbox = "Mapbox",
-
-  React = "React",
-  Node = "Node",
-  PostgreSQL = "PostgreSQL",
 }

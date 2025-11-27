@@ -27,18 +27,16 @@ export default function CurrentPosition() {
                 </Link>
             </div>
             <div className="container-wrapper section-soft pb-6">
-                <div className="grid gap-8 py-1 grid-cols-1">
-                    {loading}
-                    {loading
-                        ? skeletonArray.map((i) => (
-                            <div key={i} className="w-full flex flex-col p-4 border border-border rounded-lg animate-pulse">
-                                <Skeleton className="h-48 w-full rounded-lg mb-2" />
-                                <Skeleton className="h-6 w-3/4 mb-2" />
-                                <Skeleton className="h-4 w-full" />
-                            </div>
-                        ))
-                        : experience.slice(0, 1).map((exp) => <ExperienceOverview key={exp.id} experience={exp} />)}
-                </div>
+                {loading}
+                {loading
+                    ? skeletonArray.map((i) => (
+                        <div key={i} className="w-full flex flex-col p-4 border border-border rounded-lg animate-pulse">
+                            <Skeleton className="h-48 w-full rounded-lg mb-2" />
+                            <Skeleton className="h-6 w-3/4 mb-2" />
+                            <Skeleton className="h-4 w-full" />
+                        </div>
+                    ))
+                    : experience.slice(0, 1).map((exp) => <ExperienceOverview key={exp.id} experience={exp} />)}
             </div>
         </div>
     )

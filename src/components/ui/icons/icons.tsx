@@ -13,6 +13,17 @@ import { ViteJsIcon } from "./vite-icon"
 import { TailwindIcon } from "./tailwind-icon"
 import { ReduxIcon } from "./redux-icom"
 import { MapboxIcon } from "./mapbox-icon"
+import { NgRxIcon } from "./ngrx-icon"
+import { LessIcon } from "./less-icon"
+import { NextJsIcon } from "./nextjs-icon"
+import { JiraIcon } from "./jira-icon"
+import { YouTrackIcon } from "./youtrack-icon"
+import { AdobeXdIcon } from "./adobeXD-icon"
+import { GitIcon } from "./git-icon"
+import { JavaScriptIcon } from "./javascript-icon"
+import { webpack } from "next/dist/compiled/webpack/webpack"
+import { WebpackIcon } from "./webpack-icon"
+import { AxiosIcon } from "./axios-icon"
 
 export type IconProps = React.SVGAttributes<SVGSVGElement>;
 
@@ -31,4 +42,14 @@ export const Icons = {
   tailwind: (props: IconProps) => (<TailwindIcon {...props} />), 
   redux: (props: IconProps) => (<ReduxIcon {...props} />),
   mapbox: (props: IconProps) => (<MapboxIcon {...props} />),
+  ngrx: (props: IconProps) => (<NgRxIcon {...props} />),
+  less: (props: IconProps) => (<LessIcon {...props} />),
+  nextJs: (props: IconProps) => (<NextJsIcon {...props} />),
+  jira: (props: IconProps) => (<JiraIcon {...props} />),
+  youTrack: (props: IconProps) => (<YouTrackIcon {...props} />),
+  adobeXd: (props: IconProps) => (<AdobeXdIcon {...props} />),
+  git: (props: IconProps) => (<GitIcon {...props} />),
+  javascript: (props: IconProps) => (<JavaScriptIcon {...props} />),
+  webpack: (props: IconProps) => (<WebpackIcon {...props} />),
+  axios: (props: IconProps) => (<AxiosIcon {...props} />),
 }

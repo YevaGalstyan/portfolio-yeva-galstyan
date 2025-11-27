@@ -7,37 +7,54 @@ import { GitHubLink } from "./ui/github-link";
 import { Separator } from "./ui/separator";
 import { LinkedInLink } from "./ui/linkedin-link";
 import { Bird } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export function Header() {
 
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 10);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <header className="bg-background sticky top-0 z-50 w-11/12 md:w-3/4 lg:w-2/3 mx-auto">
-            <div className="container-wrapper 3xl:fixed:px-0 px-4">
-                <div className="3xl:fixed 3xl:container flex h-18 items-center  **:data-[slot=separator]:!h-4">
-                    <MobileNav
-                        items={siteConfig.navItems}
-                        className="flex lg:hidden"
-                    />
-                    <Button
-                        asChild
-                        variant="ghost"
-                        size="icon"
-                        className="hidden size-12 lg:flex"
-                    >
-                        <Link href="/">
-                            <Bird className="size-6" />
-                        </Link>
-                    </Button>
-                    <MainNav items={siteConfig.navItems} className="hidden lg:flex px-2" />
-                    <div className="ml-auto flex items-center sm:gap-1 gap-0.5 md:flex-1 md:justify-end">
-                        <GitHubLink />
-                        <Separator orientation="vertical" />
-                        <LinkedInLink />
-                        {/* <Separator orientation="vertical" /> */}
-                        {/* <ModeSwitcher /> */}
+        <header
+            className={`bg-background sticky top-0 z-50 transition-shadow duration-600 ${scrolled ? "shadow-sm" : ""
+                }`}>
+            <div className="w-11/12 md:w-3/4 lg:w-2/3 mx-auto">
+                <div className="container-wrapper 3xl:fixed:px-0 px-4">
+                    <div className="3xl:fixed 3xl:container flex h-18 items-center  **:data-[slot=separator]:!h-4">
+                        <MobileNav
+                            items={siteConfig.navItems}
+                            className="flex lg:hidden"
+                        />
+                        <Button
+                            asChild
+                            variant="ghost"
+                            size="icon"
+                            className="hidden size-12 lg:flex"
+                        >
+                            <Link href="/">
+                                <Bird className="size-6" />
+                            </Link>
+                        </Button>
+                        <MainNav items={siteConfig.navItems} className="hidden lg:flex px-2" />
+                        <div className="ml-auto flex items-center sm:gap-1 gap-0.5 md:flex-1 md:justify-end">
+                            <GitHubLink />
+                            <Separator orientation="vertical" />
+                            <LinkedInLink />
+                            {/* <Separator orientation="vertical" /> */}
+                            {/* <ModeSwitcher /> */}
+                        </div>
                     </div>
                 </div>
             </div>
+
         </header>
     )
 }

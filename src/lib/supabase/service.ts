@@ -1,5 +1,6 @@
 import { Experience } from "@/types/experience";
 import { Project } from "@/types/project";
+import { TechStack } from "@/types/techStack";
 import { createClient } from "@supabase/supabase-js";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -20,6 +21,15 @@ export const fetchExperience = async (): Promise<Experience[]> => {
   const { data, error } = await supabase.from<string, Experience>("Experience").select("*").order('startDate', { ascending: false });
   if (error) {
     console.error("Supabase fetchExperience error:", error);
+    return [];
+  }
+  return data ?? [];
+};
+
+export const fetchTechStack = async (): Promise<TechStack[]> => {
+  const { data, error } = await supabase.from<string, TechStack>("techstack").select("*");
+  if (error) {
+    console.error("Supabase fetchTechStack error:", error);
     return [];
   }
   return data ?? [];
