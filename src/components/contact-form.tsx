@@ -9,17 +9,16 @@ import {
     ItemMedia,
     ItemTitle,
 } from "@/components/ui/item"
+import { siteConfig } from "@/lib/siteconfig"
 import { MailPlus } from "lucide-react"
 import { useState } from "react"
-
-const email = "eva.gal0908@gmail.com"
 
 export function ContactForm() {
 
     const [copied, setCopied] = useState(false)
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(email)
+        navigator.clipboard.writeText(siteConfig.mail)
         setCopied(true)
         setTimeout(() => setCopied(false), 2000)
     }
@@ -33,8 +32,8 @@ export function ContactForm() {
                 <ItemContent>
                     <ItemTitle>Connect via Email</ItemTitle>
                     <ItemDescription className="text-left">
-                        <a href={`mailto:${email}`} >
-                            {email}
+                        <a href={`mailto:${siteConfig.mail}`} >
+                            {siteConfig.mail}
                         </a>
                     </ItemDescription>
                 </ItemContent>

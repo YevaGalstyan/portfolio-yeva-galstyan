@@ -1,7 +1,9 @@
 "use client";
 
+import ContextMenuItems from "@/components/context-menu";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { ContextMenu, ContextMenuTrigger } from "@/components/ui/context-menu";
 import { useExperienceStore } from "@/lib/zustand/useExperienceStore";
 import { useProjectStore } from "@/lib/zustand/useProjectStore";
 import { useTechStackStore } from "@/lib/zustand/useTechStack";
@@ -18,16 +20,21 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     fetchProjectData();
-    fetchExperienceData(); 
+    fetchExperienceData();
     fetchTechStackData();
   }, []);
 
   return (
     <div className="bg-background relative z-10 flex min-h-screen flex-col">
-      {/* Main content is always rendered */}
-      <Header />
-      <main className="flex flex-1 flex-col">{children}</main>
-      <Footer />
+      <ContextMenu>
+        <ContextMenuTrigger>
+          {/* Main content is always rendered */}
+          <Header />
+          <main className="flex flex-1 flex-col">{children}</main>
+          <Footer />
+        </ContextMenuTrigger>
+        <ContextMenuItems />
+      </ContextMenu>
 
       {/* Splash overlay */}
       {/* {showSplash && (

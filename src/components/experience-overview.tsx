@@ -14,7 +14,7 @@ interface ExperienceCardProps {
 export function ExperienceOverview({ experience }: ExperienceCardProps) {
 
     return (
-        <Card className="w-full p-6 border rounded-lg gap-3">
+        <Card className="w-full p-6 border border-dashed rounded-lg gap-3">
             <div className="flex flex-row md:flex-row gap-4">
                 {/* LEFT SIDE: IMAGE */}
                 {experience.company_image && (

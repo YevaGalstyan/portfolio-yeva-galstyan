@@ -42,7 +42,7 @@ export default function RootLayout({
               {children}
               <Analytics />
               <SpeedInsights />
-              <Toaster position="top-center" />
+              <Toaster position="bottom-right" />
             </ActiveThemeProvider>
           </NuqsAdapter>
         </ThemeProvider>

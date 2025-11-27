@@ -13,6 +13,7 @@ export type SiteConfig = {
         linkedIn: string
         cv: string
     }
+    mail: string
     navItems: NavItem[]
 }
 
@@ -24,6 +25,7 @@ export const siteConfig: SiteConfig = {
         linkedIn: "https://www.linkedin.com/in/yeva-galstyan/",
         cv: "https://jrjiiflokgzzwuboodhp.supabase.co/storage/v1/object/public/cv-file/CV_Yeva_Galstyan.pdf",
     },
+    mail: "eva.gal0908@gmail.com",
     navItems: [
         {
             href: "/",
