@@ -3,7 +3,6 @@ import { PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/componen
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import projectConfig from "./projects-config";
 import { ProjectOverview } from "@/components/project-overview";
-import { useEffect } from "react";
 import { useProjectStore } from "@/lib/zustand/useProjectStore";
 import { Skeleton } from "@/components/ui/skeleton";
 

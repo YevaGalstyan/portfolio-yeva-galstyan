@@ -1,9 +1,7 @@
 "use client";
 
-import { useProjectStore } from "@/lib/zustand/useProjectStore";
 import { Skeleton } from "@/components/ui/skeleton";
-import { ProjectOverview } from "@/components/project-overview";
-import { Announcement, AnnouncementTag, AnnouncementTitle } from "@/components/ui/shadcn-io/announcement";
+import { Announcement, AnnouncementTitle } from "@/components/ui/shadcn-io/announcement";
 import { ArrowUpRightIcon } from "lucide-react";
 import Link from "next/link";
 import { useExperienceStore } from "@/lib/zustand/useExperienceStore";

@@ -5,7 +5,6 @@ import { siteConfig } from "@/lib/siteconfig";
 import { MainNav } from "./main-nav";
 import { GitHubLink } from "./ui/github-link";
 import { Separator } from "./ui/separator";
-import { ModeSwitcher } from "./ui/mode-switcher";
 import { LinkedInLink } from "./ui/linkedin-link";
 import { Bird } from "lucide-react";
 

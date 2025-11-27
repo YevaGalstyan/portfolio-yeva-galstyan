@@ -3,10 +3,8 @@
 import { PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/components/page-header";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import experienceConfig from "./experience-config";
-import { ProjectOverview } from "@/components/project-overview";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useExperienceStore } from "@/lib/zustand/useExperienceStore";
-import { useEffect } from "react";
 import { ExperienceOverview } from "@/components/experience-overview";
 
 export default function HomePage() {

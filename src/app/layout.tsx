@@ -6,6 +6,7 @@ import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { ActiveThemeProvider } from "@/components/active-theme";
 import { Toaster } from "@/components/toaster";
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,6 +41,7 @@ export default function RootLayout({
             <ActiveThemeProvider>
               {children}
               <Analytics />
+              <SpeedInsights />
               <Toaster position="top-center" />
             </ActiveThemeProvider>
           </NuqsAdapter>
