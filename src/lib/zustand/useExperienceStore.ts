@@ -18,7 +18,6 @@ export const useExperienceStore = create<ExperienceState>((set, get) => ({
 
         set({ loading: true });
         const data = await fetchExperience();
-        console.log('sss')
         set({ experience: data, loading: false, loaded: true });
     },
 }));

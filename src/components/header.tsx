@@ -34,8 +34,8 @@ export function Header() {
                         <GitHubLink />
                         <Separator orientation="vertical" />
                         <LinkedInLink />
-                        <Separator orientation="vertical" />
-                        <ModeSwitcher />
+                        {/* <Separator orientation="vertical" /> */}
+                        {/* <ModeSwitcher /> */}
                     </div>
                 </div>
             </div>

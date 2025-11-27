@@ -7,6 +7,7 @@ import { Status, StatusIndicator, StatusLabel } from "@/components/ui/status";
 import { ViewCV } from "@/components/view-cv";
 import homeConfig from "./home-config";
 import RecentProjects from "./recent-projects";
+import CurrentPosition from "./current-position";
 
 export default function HomePage() {
   return (
@@ -41,7 +42,10 @@ export default function HomePage() {
       </PageHeader>
 
       <div className="w-11/12 md:w-3/4 lg:w-3/4 mx-auto">
-        <div className="container-wrapper section-soft pb-6">
+        <div className="container-wrapper section-soft pb-6 gap-5">
+          <CurrentPosition />
+        </div>
+        <div className="container-wrapper section-soft pb-6 gap-5">
           <RecentProjects />
         </div>
       </div>
