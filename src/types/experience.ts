@@ -1,3 +1,5 @@
+import { TechStackEnum } from "./techStack";
+
 export interface Experience {
     id: number;
     title: string;
@@ -8,4 +10,5 @@ export interface Experience {
     endDate: Date | null;
     company_image: string | null;
     company_link: string | null;
+    techstack: TechStackEnum[] | null;
 }

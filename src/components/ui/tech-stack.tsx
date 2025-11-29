@@ -40,6 +40,7 @@ const techStackConfig: Record<
   Javascript: { iconKey: "javascript", width: 20, height: 20 },
   Webpack: { iconKey: "webpack", width: 24, height: 24 },
   Axios: { iconKey: "axios", width: 20, height: 20 },
+  JQuery: { iconKey: "jquery", width: 20, height: 20 },
 };
 
 export const TechStackBadges: React.FC<TechStackBadgesProps> = ({

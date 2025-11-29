@@ -26,6 +26,7 @@ export enum TechStackEnum {
   React = "React",
   Angular = "Angular",
   NextJs = "NextJs",
+  JQuery = "JQuery",
 
   // -----------------------
   // State Management

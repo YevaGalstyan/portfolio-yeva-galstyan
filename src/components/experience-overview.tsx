@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Location } from "./ui/location";
 import { LinkIcon } from "lucide-react";
 import Link from "next/link"
+import { TechStackBadges } from "./ui/tech-stack";
 
 interface ExperienceCardProps {
     experience: Experience;
@@ -50,6 +51,7 @@ export function ExperienceOverview({ experience }: ExperienceCardProps) {
                             <DateRange startDate={experience.startDate} endDate={experience.endDate} />
                         </div>
                     </div>
+                    {experience.techstack && <TechStackBadges techStack={experience.techstack} />}
 
                     {experience.description && (
                         <div className="relative hidden md:block">

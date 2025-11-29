@@ -24,6 +24,7 @@ import { JavaScriptIcon } from "./javascript-icon"
 import { webpack } from "next/dist/compiled/webpack/webpack"
 import { WebpackIcon } from "./webpack-icon"
 import { AxiosIcon } from "./axios-icon"
+import { JqueryIcon } from "./jquery-icon"
 
 export type IconProps = React.SVGAttributes<SVGSVGElement>;
 
@@ -52,4 +53,5 @@ export const Icons = {
   javascript: (props: IconProps) => (<JavaScriptIcon {...props} />),
   webpack: (props: IconProps) => (<WebpackIcon {...props} />),
   axios: (props: IconProps) => (<AxiosIcon {...props} />),
+  jquery: (props: IconProps) => (<JqueryIcon {...props} />),
 }
