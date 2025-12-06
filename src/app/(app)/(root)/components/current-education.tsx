@@ -16,9 +16,9 @@ export default function CurrentEducation() {
         <div className="flex flex-col gap-3">
             <div className="flex justify-between">
                 <p className="text-primary leading-tighter max-w-2xl text-2xl font-semibold tracking-tight text-balance lg:leading-[1.1] lg:font-semibold xl:text-3xl xl:tracking-tighter">
-                    Educational Background
+                    Education
                 </p>
-                <Link href="/experience">
+                <Link href="/education">
                     <Announcement>
                         <AnnouncementTitle>
                             View All Degrees
