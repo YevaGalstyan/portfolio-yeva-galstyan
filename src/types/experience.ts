@@ -11,4 +11,5 @@ export interface Experience {
     company_image: string | null;
     company_link: string | null;
     techstack: TechStackEnum[] | null;
+    responsibilities: string[];
 }

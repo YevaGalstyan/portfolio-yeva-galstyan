@@ -21,14 +21,16 @@ export function CollapsibleList({ title, items }: CollapsibleListProps) {
             </button>
 
             <div
-                className={`transition-all overflow-hidden duration-300 ease-in-out ${
-                    isOpen ? "max-h-96 mt-2" : "max-h-0"
-                }`}
+                className={`transition-all overflow-hidden duration-300 ease-in-out ${isOpen ? "max-h-96 mt-2" : "max-h-0"
+                    }`}
             >
                 <CardDescription className="text-sm text-muted-foreground space-y-1">
                     <ul className="list-disc list-inside">
                         {items.map((item, idx) => (
-                            <li key={idx}>{item}</li>
+                            <li
+                                key={idx}
+                                dangerouslySetInnerHTML={{ __html: item }}
+                            />
                         ))}
                     </ul>
                 </CardDescription>

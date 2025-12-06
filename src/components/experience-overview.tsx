@@ -5,6 +5,7 @@ import { Location } from "./ui/location";
 import { LinkIcon } from "lucide-react";
 import Link from "next/link"
 import { TechStackBadges } from "./ui/tech-stack";
+import { CollapsibleList } from "./ui/collapsable-list";
 
 interface ExperienceCardProps {
     experience: Experience;
@@ -61,6 +62,16 @@ export function ExperienceOverview({ experience }: ExperienceCardProps) {
                             </CardDescription>
                         </div>
                     )}
+
+
+                    {experience.responsibilities.length > 0 && (
+                        <div className="relative hidden md:block">
+                            <CollapsibleList
+                                title="Responsibilities"
+                                items={experience.responsibilities}
+                            />
+                        </div>
+                    )}
                 </div>
             </div>
 
@@ -73,6 +84,15 @@ export function ExperienceOverview({ experience }: ExperienceCardProps) {
                     >
                         {experience.description}
                     </CardDescription>
+                </div>
+            )}
+
+            {experience.responsibilities.length > 0 && (
+                <div className="relative mt-1 block md:hidden">
+                    <CollapsibleList
+                        title="Responsibilities"
+                        items={experience.responsibilities}
+                    />
                 </div>
             )}
         </Card>
