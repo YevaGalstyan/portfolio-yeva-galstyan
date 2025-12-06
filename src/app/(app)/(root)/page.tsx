@@ -9,6 +9,7 @@ import homeConfig from "./home-config";
 import RecentProjects from "./components/recent-projects";
 import CurrentPosition from "./components/current-position";
 import TechStack from "./components/tech-stack";
+import CurrentEducation from "./components/current-education";
 
 export default function HomePage() {
   return (
@@ -45,6 +46,9 @@ export default function HomePage() {
       <div className="w-11/12 md:w-3/4 lg:w-3/4 mx-auto">
         <div className="container-wrapper section-soft pb-6 gap-5">
           <TechStack />
+        </div>
+        <div className="container-wrapper section-soft pb-6 gap-5">
+          <CurrentEducation />
         </div>
         <div className="container-wrapper section-soft pb-6 gap-5">
           <CurrentPosition />

@@ -1,8 +1,6 @@
-import { Button } from "./ui/button";
-import { Card, CardDescription, CardHeader, CardTitle, CardFooter, CardContent } from "./ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { DateRange } from "./ui/dateRange";
 import { Experience } from "@/types/experience";
-import { useState } from "react";
 import { Location } from "./ui/location";
 import { LinkIcon } from "lucide-react";
 import Link from "next/link"

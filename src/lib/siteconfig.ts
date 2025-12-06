@@ -48,15 +48,15 @@ export const siteConfig: SiteConfig = {
             href: "",
             label: "Extra",
             children: [
+                 {
+                    href: "/trainings",
+                    label: "Trainings",
+                    description: "Completed programs and certifications"
+                },
                 {
                     href: "/memberships",
                     label: "Memberships",
                     description: "Professional and academic organizations"
-                },
-                {
-                    href: "/trainings",
-                    label: "Trainings",
-                    description: "Completed programs and certifications"
                 },
                 {
                     href: "/seminars",

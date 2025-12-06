@@ -1,3 +1,4 @@
+import { Education } from "@/types/education";
 import { Experience } from "@/types/experience";
 import { Project } from "@/types/project";
 import { TechStack } from "@/types/techStack";
@@ -30,6 +31,16 @@ export const fetchTechStack = async (): Promise<TechStack[]> => {
   const { data, error } = await supabase.from<string, TechStack>("techstack").select("*");
   if (error) {
     console.error("Supabase fetchTechStack error:", error);
+    return [];
+  }
+  return data ?? [];
+};
+
+
+export const fetchEducation = async (): Promise<Education[]> => {
+  const { data, error } = await supabase.from<string, Education>("education").select("*").order('startDate', { ascending: false });
+  if (error) {
+    console.error("Supabase fetchEducation error:", error);
     return [];
   }
   return data ?? [];

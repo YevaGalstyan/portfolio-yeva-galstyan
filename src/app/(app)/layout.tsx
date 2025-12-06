@@ -4,6 +4,7 @@ import ContextMenuItems from "@/components/context-menu";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { ContextMenu, ContextMenuTrigger } from "@/components/ui/context-menu";
+import { useEducationStore } from "@/lib/zustand/useEducationStore";
 import { useExperienceStore } from "@/lib/zustand/useExperienceStore";
 import { useProjectStore } from "@/lib/zustand/useProjectStore";
 import { useTechStackStore } from "@/lib/zustand/useTechStack";
@@ -17,11 +18,13 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const { fetch: fetchProjectData } = useProjectStore();
   const { fetch: fetchExperienceData } = useExperienceStore();
   const { fetch: fetchTechStackData } = useTechStackStore();
+    const { fetch: fetchEducationData } = useEducationStore();
 
   useEffect(() => {
     fetchProjectData();
     fetchExperienceData();
     fetchTechStackData();
+    fetchEducationData();
   }, []);
 
   return (
