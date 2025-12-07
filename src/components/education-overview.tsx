@@ -12,8 +12,6 @@ interface EducationCardProps {
 }
 
 export function EducationOverview({ education }: EducationCardProps) {
-    const [showCourses, setShowCourses] = useState(false);
-
     return (
         <Card className="w-full p-6 border border-dashed rounded-lg gap-3">
             <div className="flex flex-row md:flex-row gap-4">

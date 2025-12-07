@@ -8,7 +8,7 @@ import { useEducationStore } from "@/lib/zustand/useEducationStore";
 import { useExperienceStore } from "@/lib/zustand/useExperienceStore";
 import { useProjectStore } from "@/lib/zustand/useProjectStore";
 import { useTechStackStore } from "@/lib/zustand/useTechStack";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   // const [showSplash, setShowSplash] = useState<boolean>(true);
@@ -18,13 +18,14 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const { fetch: fetchProjectData } = useProjectStore();
   const { fetch: fetchExperienceData } = useExperienceStore();
   const { fetch: fetchTechStackData } = useTechStackStore();
-    const { fetch: fetchEducationData } = useEducationStore();
+  const { fetch: fetchEducationData } = useEducationStore();
 
   useEffect(() => {
     fetchProjectData();
     fetchExperienceData();
     fetchTechStackData();
     fetchEducationData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
