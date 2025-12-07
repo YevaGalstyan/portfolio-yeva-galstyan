@@ -15,11 +15,11 @@ export function EducationOverview({ education }: EducationCardProps) {
         <Card className="w-full p-6 border border-dashed rounded-lg gap-3">
             <div className="flex flex-row md:flex-row gap-4">
                 {/* LEFT SIDE: IMAGE */}
-                {education.school_image && (
+                {education.schoolImage && (
                     <div className="h-20 w-20 md:h-24 md:w-24 overflow-hidden rounded-lg border border-accent p-1 shrink-0">
                         <img
-                            src={education.school_image}
-                            alt={education.school_name}
+                            src={education.schoolImage}
+                            alt={education.schoolName}
                             className="h-full w-full object-cover"
                         />
                     </div>
@@ -32,10 +32,10 @@ export function EducationOverview({ education }: EducationCardProps) {
                             <span className="text-md font-semibold">{education.degree}</span>
                             <span className="text-md font-normal">at </span>
 
-                            {education.school_link && (
-                                <Link href={education.school_link} target="_blank" rel="noopener noreferrer">
+                            {education.schoolLink && (
+                                <Link href={education.schoolLink} target="_blank" rel="noopener noreferrer">
                                     <div className="flex gap-1 hover:underline">
-                                        <span className="text-md font-normal">{education.school_name}</span>
+                                        <span className="text-md font-normal">{education.schoolName}</span>
                                         <LinkIcon className="w-4 h-4" />
                                     </div>
 
@@ -73,11 +73,11 @@ export function EducationOverview({ education }: EducationCardProps) {
                         </div>
                     )}
 
-                    {education.relevant_courses?.length > 0 && (
+                    {education.relevantCourses?.length > 0 && (
                          <div className="relative hidden md:block">
                         <CollapsibleList
                             title="Relevant Courses"
-                            items={education.relevant_courses}
+                            items={education.relevantCourses}
                         />
                         </div>
                     )}
@@ -109,11 +109,11 @@ export function EducationOverview({ education }: EducationCardProps) {
             )}
 
 
-            {education.relevant_courses?.length > 0 && (
+            {education.relevantCourses?.length > 0 && (
                 <div className="relative block md:hidden">
                     <CollapsibleList
                         title="Relevant Courses"
-                        items={education.relevant_courses}
+                        items={education.relevantCourses}
                     />
                 </div>
             )}

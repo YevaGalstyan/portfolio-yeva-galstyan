@@ -28,7 +28,7 @@ export const fetchExperience = async (): Promise<Experience[]> => {
 };
 
 export const fetchTechStack = async (): Promise<TechStack[]> => {
-  const { data, error } = await supabase.from<string, TechStack>("techstack").select("*");
+  const { data, error } = await supabase.from<string, TechStack>("Techstack").select("*");
   if (error) {
     console.error("Supabase fetchTechStack error:", error);
     return [];
@@ -38,7 +38,7 @@ export const fetchTechStack = async (): Promise<TechStack[]> => {
 
 
 export const fetchEducation = async (): Promise<Education[]> => {
-  const { data, error } = await supabase.from<string, Education>("education").select("*").order('startDate', { ascending: false });
+  const { data, error } = await supabase.from<string, Education>("Education").select("*").order('startDate', { ascending: false });
   if (error) {
     console.error("Supabase fetchEducation error:", error);
     return [];
