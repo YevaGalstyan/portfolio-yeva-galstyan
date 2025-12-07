@@ -21,12 +21,14 @@ export enum TechStackCategory {
 
 export enum TechStackEnum {
   // -----------------------
-  // Frontend Frameworks
+  // Frontend and Frameworks
   // -----------------------
   React = "React",
   Angular = "Angular",
   NextJs = "NextJs",
   JQuery = "JQuery",
+  HTML = "HTML",
+  CSS = "CSS",
 
   // -----------------------
   // State Management
@@ -41,7 +43,8 @@ export enum TechStackEnum {
   Sass = "Sass",
   Less = "Less",
   AntD = "AntD",
-
+  Bootstrap = "Bootstrap",
+  
   // -----------------------
   // Build Tools
   // -----------------------

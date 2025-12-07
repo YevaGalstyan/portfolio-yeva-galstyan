@@ -1,10 +1,12 @@
 import { Card, CardDescription, CardTitle } from "./ui/card";
 import { DateRange } from "./ui/dateRange";
 import { Location } from "./ui/location";
-import { LinkIcon } from "lucide-react";
+import { ArrowUpRightIcon, LinkIcon, ScrollText } from "lucide-react";
 import Link from "next/link"
 import { CollapsibleList } from "./ui/collapsable-list";
 import { Trainging } from "@/types/training";
+import { TechStackBadges } from "./ui/tech-stack";
+import { Announcement, AnnouncementTitle } from "./ui/announcement";
 
 interface TrainingCardProps {
     training: Trainging;
@@ -47,9 +49,11 @@ export function TrainingOverview({ training }: TrainingCardProps) {
 
                         <div className="flex gap-2 flex-wrap">
                             {training.location && <Location location={training.location} />}
-                            <DateRange startDate={training.startDate} endDate={training.endDate} />
+                            <DateRange startDate={training.startDate} endDate={training.endDate} useDays={training.showDates} />
                         </div>
                     </div>
+
+                    {training.techStack && <TechStackBadges techStack={training.techStack} />}
 
                     {/* DESCRIPTION */}
                     {training.description && (
@@ -63,14 +67,18 @@ export function TrainingOverview({ training }: TrainingCardProps) {
                         </div>
                     )}
 
-                    {/* {education.relevant_courses?.length > 0 && (
-                         <div className="relative hidden md:block">
-                        <CollapsibleList
-                            title="Relevant Courses"
-                            items={education.relevant_courses}
-                        />
+                    {training.certificate && (
+                        <div className="relative hidden md:block">
+                            <Link target="_blank" href={training.certificate}>
+                                <Announcement>
+                                    <AnnouncementTitle className="cursor-pointer">
+                                        <ScrollText className="shrink-0 text-muted-foreground" size={16} />
+                                        Certificate
+                                    </AnnouncementTitle>
+                                </Announcement>
+                            </Link>
                         </div>
-                    )} */}
+                    )}
                 </div>
             </div>
 
@@ -85,15 +93,19 @@ export function TrainingOverview({ training }: TrainingCardProps) {
                     </CardDescription>
                 </div>
             )}
-            {/* 
-            {education.relevant_courses?.length > 0 && (
-                <div className="relative block md:hidden">
-                    <CollapsibleList
-                        title="Relevant Courses"
-                        items={education.relevant_courses}
-                    />
+
+            {training.certificate && (
+                <div className="relative mt-1 block md:hidden">
+                    <Link target="_blank" href={training.certificate}>
+                        <Announcement>
+                            <AnnouncementTitle className="cursor-pointer">
+                                <ScrollText className="shrink-0 text-muted-foreground" size={16} />
+                                Certificate
+                            </AnnouncementTitle>
+                        </Announcement>
+                    </Link>
                 </div>
-            )} */}
+            )}
         </Card>
     );
 }

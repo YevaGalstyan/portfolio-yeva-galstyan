@@ -3,7 +3,7 @@
 import { useProjectStore } from "@/lib/zustand/useProjectStore";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ProjectOverview } from "@/components/project-overview";
-import { Announcement, AnnouncementTitle } from "@/components/ui/shadcn-io/announcement";
+import { Announcement, AnnouncementTitle } from "@/components/ui/announcement";
 import { ArrowUpRightIcon } from "lucide-react";
 import Link from "next/link";
 

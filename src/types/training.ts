@@ -1,3 +1,5 @@
+import { TechStack } from "./techStack";
+
 export interface Trainging {
     id: number;
     name: string;
@@ -8,4 +10,7 @@ export interface Trainging {
     startDate: Date;
     endDate: Date | null;
     description: string | null;
+    techStack: TechStack[] | null;
+    showDates?: boolean;
+    certificate?: string | null;
 }

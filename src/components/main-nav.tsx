@@ -8,6 +8,7 @@ import { Button } from "./ui/button"
 import { NavItem } from "@/lib/siteconfig"
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover"
 import { ChevronDown } from "lucide-react"
+import path from "path"
 
 export function MainNav({
   items,
@@ -45,19 +46,27 @@ export function MainNav({
                     </div>
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent align="start" className="w-full">
-                  <div className="flex flex-col gap-3">
-                    {item.children?.map((child, childIndex) => (
-                      <div key={childIndex} className="flex flex-col gap-0.5">
+                <PopoverContent align="start" className="w-full p-2">
+                  <div className="flex flex-col gap-1">
+                    {item.children?.map((child, childIndex) => {
+                      const isActiveChild = pathname === child.href;
+                      return (
                         <Link
                           href={child.href}
                         >
-                          <span className="text-sm font-medium underline">{child.label}</span>
+                          <div key={childIndex}
+                            className={cn(
+                              "transition-colors flex flex-col gap-0.5 p-2 rounded-md",
+                              isActiveChild
+                                ? "bg-amber-100"
+                                : "hover:bg-accent"
+                            )}>
+                            <span className="text-sm font-medium">{child.label}</span>
+                            <span className="text-sm text-muted-foreground">{child.description}</span>
+                          </div>
                         </Link>
-                        <span className="text-sm text-muted-foreground">{child.description}</span>
-                      </div>
-
-                    ))}
+                      )
+                    })}
                   </div>
                 </PopoverContent>
               </Popover>
