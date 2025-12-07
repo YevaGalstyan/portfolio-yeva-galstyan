@@ -17,10 +17,10 @@ export function ExperienceOverview({ experience }: ExperienceCardProps) {
         <Card className="w-full p-6 border border-dashed rounded-lg gap-3">
             <div className="flex flex-row md:flex-row gap-4">
                 {/* LEFT SIDE: IMAGE */}
-                {experience.company_image && (
+                {experience.companyImage && (
                     <div className="h-20 w-20 md:h-24 md:w-24 overflow-hidden rounded-lg border border-accent p-1 shrink-0">
                         <img
-                            src={experience.company_image}
+                            src={experience.companyImage}
                             alt={experience.title}
                             className="h-full w-full object-cover"
                         />
@@ -34,10 +34,10 @@ export function ExperienceOverview({ experience }: ExperienceCardProps) {
                             <span className="text-md font-semibold">{experience.title}</span>
                             <span className="text-md font-normal">at </span>
 
-                            {experience.company_link && (
-                                <Link href={experience.company_link} target="_blank" rel="noopener noreferrer">
+                            {experience.companyLink && (
+                                <Link href={experience.companyLink} target="_blank" rel="noopener noreferrer">
                                     <div className="flex gap-1 hover:underline">
-                                        <span className="text-md font-normal">{experience.company_title}</span>
+                                        <span className="text-md font-normal">{experience.companyTitle}</span>
                                         <LinkIcon className="w-4 h-4" />
                                     </div>
 
