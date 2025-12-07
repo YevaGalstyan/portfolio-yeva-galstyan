@@ -1,8 +1,6 @@
 import React from "react";
 
-interface SVGProps extends React.SVGProps<SVGSVGElement> {}
-
-export const GithubIcon: React.FC<SVGProps> = (props) => (
+export const GithubIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
    <svg viewBox="0 0 438.549 438.549" {...props}>
       <path
         fill="currentColor"

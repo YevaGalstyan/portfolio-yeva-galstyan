@@ -1,9 +1,7 @@
 import React from "react";
 import { Tooltip, TooltipTrigger, TooltipContent } from "../tooltip";
 
-interface SVGProps extends React.SVGProps<SVGSVGElement> { }
-
-export const AxiosIcon: React.FC<SVGProps> = (props) => (
+export const AxiosIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <Tooltip>
         <TooltipTrigger>
             <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">

@@ -4,7 +4,6 @@ import { Location } from "./ui/location";
 import { LinkIcon } from "lucide-react";
 import Link from "next/link"
 import { Education } from "@/types/education";
-import { useState } from "react";
 import { CollapsibleList } from "./ui/collapsable-list";
 
 interface EducationCardProps {

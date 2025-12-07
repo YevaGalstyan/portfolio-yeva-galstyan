@@ -1,8 +1,6 @@
 import { Project } from "@/types/project";
-import { Button } from "./ui/button";
-import { Card, CardAction, CardDescription, CardHeader, CardTitle, CardFooter, CardContent } from "./ui/card";
+import { Card, CardDescription, CardHeader, CardTitle, CardFooter } from "./ui/card";
 import { GitHubLink } from "./ui/github-link";
-import { Badge } from "./ui/badge";
 import { DateRange } from "./ui/dateRange";
 import { ViewInnerPage } from "./ui/view-inner-page";
 import { TechStackBadges } from "./ui/tech-stack";

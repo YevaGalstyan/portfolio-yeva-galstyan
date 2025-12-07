@@ -1,9 +1,7 @@
 import React from "react";
-
-interface SVGProps extends React.SVGProps<SVGSVGElement> { }
 import { Tooltip, TooltipTrigger, TooltipContent } from "../tooltip";
 
-export const AngularIcon: React.FC<SVGProps> = (props) => (
+export const AngularIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <Tooltip>
     <TooltipTrigger>
       <svg

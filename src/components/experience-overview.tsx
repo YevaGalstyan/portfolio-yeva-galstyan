@@ -1,4 +1,4 @@
-import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardDescription, CardTitle } from "./ui/card";
 import { DateRange } from "./ui/dateRange";
 import { Experience } from "@/types/experience";
 import { Location } from "./ui/location";
