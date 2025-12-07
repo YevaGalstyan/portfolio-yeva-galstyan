@@ -1,4 +1,3 @@
-import { Project } from "@/types/project";
 import { create } from "zustand";
 import { fetchTechStack } from "../supabase/service";
 import { TechStack } from "@/types/techStack";

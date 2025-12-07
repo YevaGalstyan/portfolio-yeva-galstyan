@@ -4,7 +4,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Announcement, AnnouncementTitle } from "@/components/ui/shadcn-io/announcement";
 import { ArrowUpRightIcon } from "lucide-react";
 import Link from "next/link";
-import { ExperienceOverview } from "@/components/experience-overview";
 import { useEducationStore } from "@/lib/zustand/useEducationStore";
 import { EducationOverview } from "@/components/education-overview";
 

@@ -1,9 +1,7 @@
 import { ContactForm } from "@/components/contact-form";
-import { PageActions, PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/components/page-header";
+import { PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/components/page-header";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { GitHubLink } from "@/components/ui/github-link";
 import { LinkedInLink } from "@/components/ui/linkedin-link";
-import { Separator } from "@/components/ui/separator";
 import contactsConfig from "./contactsConfig";
 
 export default function HomePage() {

@@ -11,9 +11,9 @@ import { useTechStackStore } from "@/lib/zustand/useTechStack";
 import { useEffect, useState } from "react";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
-  const [showSplash, setShowSplash] = useState<boolean>(true);
+  // const [showSplash, setShowSplash] = useState<boolean>(true);
 
-  const handleSplashClick = () => setShowSplash(false);
+  // const handleSplashClick = () => setShowSplash(false);
 
   const { fetch: fetchProjectData } = useProjectStore();
   const { fetch: fetchExperienceData } = useExperienceStore();

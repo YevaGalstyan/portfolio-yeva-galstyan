@@ -6,8 +6,8 @@ import educationConfig from "./education-config";
 import { useEducationStore } from "@/lib/zustand/useEducationStore";
 import { Skeleton } from "@/components/ui/skeleton";
 import { EducationOverview } from "@/components/education-overview";
-import { Item, ItemActions, ItemContent, ItemMedia, ItemTitle } from "@/components/ui/item";
-import { BadgeCheckIcon, Bookmark, BookMarked, ChevronRightIcon } from "lucide-react";
+import { Item, ItemContent, ItemMedia, ItemTitle } from "@/components/ui/item";
+import { BookMarked } from "lucide-react";
 
 export default function HomePage() {
   const skeletonArray = [1, 2, 3];

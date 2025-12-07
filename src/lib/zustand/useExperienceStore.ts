@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { fetchExperience, fetchProjects } from "../supabase/service";
+import { fetchExperience } from "../supabase/service";
 import { Experience } from "@/types/experience";
 
 interface ExperienceState {
