@@ -4,10 +4,12 @@ import ContextMenuItems from "@/components/context-menu";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { ContextMenu, ContextMenuTrigger } from "@/components/ui/context-menu";
+import { fetchTraining } from "@/lib/supabase/service";
 import { useEducationStore } from "@/lib/zustand/useEducationStore";
 import { useExperienceStore } from "@/lib/zustand/useExperienceStore";
 import { useProjectStore } from "@/lib/zustand/useProjectStore";
 import { useTechStackStore } from "@/lib/zustand/useTechStack";
+import { useTrainingStore } from "@/lib/zustand/useTrainingStore";
 import { useEffect } from "react";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
@@ -19,12 +21,14 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const { fetch: fetchExperienceData } = useExperienceStore();
   const { fetch: fetchTechStackData } = useTechStackStore();
   const { fetch: fetchEducationData } = useEducationStore();
+  const { fetch: fetchTrainingData } = useTrainingStore();
 
   useEffect(() => {
     fetchProjectData();
     fetchExperienceData();
     fetchTechStackData();
     fetchEducationData();
+    fetchTrainingData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
