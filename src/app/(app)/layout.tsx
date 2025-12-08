@@ -8,6 +8,7 @@ import { fetchTraining } from "@/lib/supabase/service";
 import { useEducationStore } from "@/lib/zustand/useEducationStore";
 import { useExperienceStore } from "@/lib/zustand/useExperienceStore";
 import { useProjectStore } from "@/lib/zustand/useProjectStore";
+import { useSeminarStore } from "@/lib/zustand/useSeminarStore";
 import { useTechStackStore } from "@/lib/zustand/useTechStack";
 import { useTrainingStore } from "@/lib/zustand/useTrainingStore";
 import { useEffect } from "react";
@@ -22,13 +23,15 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const { fetch: fetchTechStackData } = useTechStackStore();
   const { fetch: fetchEducationData } = useEducationStore();
   const { fetch: fetchTrainingData } = useTrainingStore();
-
+  const { fetch: fetchSeminarData } = useSeminarStore();
+  
   useEffect(() => {
     fetchProjectData();
     fetchExperienceData();
     fetchTechStackData();
     fetchEducationData();
     fetchTrainingData();
+    fetchSeminarData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

@@ -9,7 +9,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function TechStack() {
     const { techStack, loading } = useTechStackStore();
-    const [selectedCategory, setSelectedCategory] = useState<typeof categoryFilterOptions[number] | null>(null);
+    const [selectedCategory, setSelectedCategory] = useState<typeof categoryFilterOptions[number] | null>('Frontend');
     const skeletonArray = Array.from({ length: 12 });
 
     const filteredTechStack = techStack?.filter(

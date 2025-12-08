@@ -28,7 +28,7 @@ export function TrainingOverview({ training }: TrainingCardProps) {
                 )}
 
                 {/* RIGHT SIDE: TITLE + META (NO DESCRIPTION ON MOBILE) */}
-                <div className="flex flex-col flex-1 gap-2">
+                <div className="flex flex-col flex-1 gap-1">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
                         <CardTitle className="flex flex-wrap gap-1 items-center">
                             <span className="text-md font-semibold">{training.name}</span>
@@ -68,7 +68,7 @@ export function TrainingOverview({ training }: TrainingCardProps) {
                     )}
 
                     {training.certificate && (
-                        <div className="relative hidden md:block">
+                        <div className="relative hidden md:block mt-1">
                             <Link target="_blank" href={training.certificate}>
                                 <Announcement>
                                     <AnnouncementTitle className="cursor-pointer">

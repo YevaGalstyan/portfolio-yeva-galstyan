@@ -1,6 +1,7 @@
 import { Education } from "@/types/education";
 import { Experience } from "@/types/experience";
 import { Project } from "@/types/project";
+import { Seminar } from "@/types/seminar";
 import { TechStack } from "@/types/techStack";
 import { Training } from "@/types/training";
 import { createClient } from "@supabase/supabase-js";
@@ -55,6 +56,16 @@ export const fetchTraining = async (): Promise<Training[]> => {
   const { data, error } = await supabase.from<string, Training>("Training").select("*").order('startDate', { ascending: false });
   if (error) {
     console.error("Supabase fetchTraining error:", error);
+    return [];
+  }
+  return data ?? [];
+};
+
+// Fetch function for Seminars
+export const fetchSeminars = async (): Promise<Seminar[]> => {
+  const { data, error } = await supabase.from<string, Seminar>("Seminar").select("*").order('startDate', { ascending: false });
+  if (error) {
+    console.error("Supabase fetchSeminars error:", error);
     return [];
   }
   return data ?? [];
