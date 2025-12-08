@@ -1,6 +1,5 @@
 import { create } from "zustand";
-import { fetchEducation, fetchMemberships } from "../supabase/service";
-import { Education } from "@/types/education";
+import { fetchMemberships } from "../supabase/service";
 import { Membership } from "@/types/membership";
 
 interface MembershipState {

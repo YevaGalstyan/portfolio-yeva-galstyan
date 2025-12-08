@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { fetchSeminars, fetchTechStack, fetchTraining } from "../supabase/service";
+import { fetchSeminars } from "../supabase/service";
 import { Seminar } from "@/types/seminar";
 
 interface SeminarState {

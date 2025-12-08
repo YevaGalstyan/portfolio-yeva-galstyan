@@ -8,7 +8,6 @@ import { Button } from "./ui/button"
 import { NavItem } from "@/lib/siteconfig"
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover"
 import { ChevronDown } from "lucide-react"
-import path from "path"
 
 export function MainNav({
   items,
@@ -52,6 +51,7 @@ export function MainNav({
                       const isActiveChild = pathname === child.href;
                       return (
                         <Link
+                          key={childIndex}
                           href={child.href}
                         >
                           <div key={childIndex}

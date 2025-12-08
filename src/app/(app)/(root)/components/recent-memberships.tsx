@@ -4,7 +4,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Announcement, AnnouncementTitle } from "@/components/ui/announcement";
 import { ArrowUpRightIcon } from "lucide-react";
 import Link from "next/link";
-import { TrainingOverview } from "@/components/training-overview";
 import { useMembershipStore } from "@/lib/zustand/useMembershiStore";
 import { MembershipOverview } from "@/components/membership-overview";
 

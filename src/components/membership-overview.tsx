@@ -1,12 +1,8 @@
 import { Card, CardDescription, CardTitle } from "./ui/card";
 import { DateRange } from "./ui/dateRange";
 import { Location } from "./ui/location";
-import { Expand, LinkIcon, ScrollText } from "lucide-react";
+import { LinkIcon } from "lucide-react";
 import Link from "next/link"
-import { TechStackBadges } from "./ui/tech-stack";
-import { Announcement, AnnouncementTitle } from "./ui/announcement";
-import { Seminar } from "@/types/seminar";
-import { useState } from "react";
 import { ExpandableDescription } from "./expandable-description";
 import { Membership } from "@/types/membership";
 

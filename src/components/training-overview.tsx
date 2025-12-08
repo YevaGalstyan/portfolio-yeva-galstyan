@@ -1,13 +1,11 @@
 import { Card, CardDescription, CardTitle } from "./ui/card";
 import { DateRange } from "./ui/dateRange";
 import { Location } from "./ui/location";
-import { ArrowUpRightIcon, LinkIcon, ScrollText } from "lucide-react";
+import { LinkIcon, ScrollText } from "lucide-react";
 import Link from "next/link"
-import { CollapsibleList } from "./ui/collapsable-list";
 import { Training } from "@/types/training";
 import { TechStackBadges } from "./ui/tech-stack";
 import { Announcement, AnnouncementTitle } from "./ui/announcement";
-import { useState } from "react";
 import { ExpandableDescription } from "./expandable-description";
 
 interface TrainingCardProps {

@@ -1,6 +1,5 @@
 import { create } from "zustand";
-import { fetchTechStack, fetchTraining } from "../supabase/service";
-import { TechStack } from "@/types/techStack";
+import { fetchTraining } from "../supabase/service";
 import { Training } from "@/types/training";
 
 interface TrainingState {

@@ -24,7 +24,6 @@ import { WebpackIcon } from "./webpack-icon"
 import { AxiosIcon } from "./axios-icon"
 import { JqueryIcon } from "./jquery-icon"
 import { HtmlIcon } from "./html-icon"
-import css from "styled-jsx/css"
 import { CssIcon } from "./css-icon"
 import { BootstrapIcon } from "./bootstrap-icon"
 
