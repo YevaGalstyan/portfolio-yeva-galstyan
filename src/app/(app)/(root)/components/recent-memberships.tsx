@@ -17,7 +17,7 @@ export default function RecentMemberships() {
                 <p className="text-primary leading-tighter max-w-2xl text-2xl font-semibold tracking-tight text-balance lg:leading-[1.1] lg:font-semibold xl:text-3xl xl:tracking-tighter">
                     Memberships
                 </p>
-                <Link href="/education">
+                <Link href="/memberships">
                     <Announcement>
                         <AnnouncementTitle>
                             View All Memberships
