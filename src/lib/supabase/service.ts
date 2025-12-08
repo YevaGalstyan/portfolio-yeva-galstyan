@@ -2,7 +2,7 @@ import { Education } from "@/types/education";
 import { Experience } from "@/types/experience";
 import { Project } from "@/types/project";
 import { TechStack } from "@/types/techStack";
-import { Trainging } from "@/types/training";
+import { Training } from "@/types/training";
 import { createClient } from "@supabase/supabase-js";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -51,8 +51,8 @@ export const fetchEducation = async (): Promise<Education[]> => {
 };
 
 // Fetch function for Training
-export const fetchTraining = async (): Promise<Trainging[]> => {
-  const { data, error } = await supabase.from<string, Trainging>("Training").select("*").order('startDate', { ascending: false });
+export const fetchTraining = async (): Promise<Training[]> => {
+  const { data, error } = await supabase.from<string, Training>("Training").select("*").order('startDate', { ascending: false });
   if (error) {
     console.error("Supabase fetchTraining error:", error);
     return [];

@@ -54,15 +54,16 @@ export const siteConfig: SiteConfig = {
                     description: "Completed programs and certifications"
                 },
                 {
+                    href: "/seminars",
+                    label: "Seminars",
+                    description: "Workshops and seminars I've attended"
+                },
+                {
                     href: "/memberships",
                     label: "Memberships",
                     description: "Professional and academic organizations"
                 },
-                {
-                    href: "/seminars",
-                    label: "Seminars",
-                    description: "Workshops and seminars I've attended"
-                }
+                
             ]
         },
         {

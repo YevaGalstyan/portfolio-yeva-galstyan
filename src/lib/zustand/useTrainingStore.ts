@@ -1,10 +1,11 @@
 import { create } from "zustand";
 import { fetchTechStack, fetchTraining } from "../supabase/service";
 import { TechStack } from "@/types/techStack";
-import { Trainging } from "@/types/training";
+import { Training } from "@/types/training";
 
 interface TrainingState {
-    training: Trainging[];
+    training: Training[];
+    trainingOverview: Training[];
     loading: boolean;
     loaded: boolean;
     fetch: () => Promise<void>;
@@ -12,6 +13,7 @@ interface TrainingState {
 
 export const useTrainingStore = create<TrainingState>((set, get) => ({
     training: [],
+    trainingOverview: [],
     loading: false,
     loaded: false,
     fetch: async () => {
@@ -19,6 +21,11 @@ export const useTrainingStore = create<TrainingState>((set, get) => ({
 
         set({ loading: true });
         const data = await fetchTraining();
-        set({ training: data, loading: false, loaded: true });
+        set({
+            training: data,
+            trainingOverview: data.filter(t => t.showInOverview === true),
+            loading: false,
+            loaded: true
+        });
     },
 }));

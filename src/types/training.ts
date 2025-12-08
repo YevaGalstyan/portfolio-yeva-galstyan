@@ -1,6 +1,6 @@
 import { TechStack } from "./techStack";
 
-export interface Trainging {
+export interface Training {
     id: number;
     name: string;
     companyName: string;
@@ -13,4 +13,5 @@ export interface Trainging {
     techStack: TechStack[] | null;
     showDates?: boolean;
     certificate?: string | null;
+    showInOverview?: boolean;
 }
