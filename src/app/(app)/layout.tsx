@@ -7,6 +7,7 @@ import { ContextMenu, ContextMenuTrigger } from "@/components/ui/context-menu";
 import { fetchTraining } from "@/lib/supabase/service";
 import { useEducationStore } from "@/lib/zustand/useEducationStore";
 import { useExperienceStore } from "@/lib/zustand/useExperienceStore";
+import { useMembershipStore } from "@/lib/zustand/useMembershiStore";
 import { useProjectStore } from "@/lib/zustand/useProjectStore";
 import { useSeminarStore } from "@/lib/zustand/useSeminarStore";
 import { useTechStackStore } from "@/lib/zustand/useTechStack";
@@ -24,7 +25,8 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const { fetch: fetchEducationData } = useEducationStore();
   const { fetch: fetchTrainingData } = useTrainingStore();
   const { fetch: fetchSeminarData } = useSeminarStore();
-  
+    const { fetch: fetchMembershipData } = useMembershipStore();
+
   useEffect(() => {
     fetchProjectData();
     fetchExperienceData();
@@ -32,6 +34,8 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     fetchEducationData();
     fetchTrainingData();
     fetchSeminarData();
+    fetchMembershipData(); 
+    
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

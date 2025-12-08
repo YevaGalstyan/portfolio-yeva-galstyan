@@ -11,6 +11,8 @@ import CurrentPosition from "./components/current-position";
 import TechStack from "./components/tech-stack";
 import CurrentEducation from "./components/current-education";
 import RecentTrainings from "./components/recent-trainings";
+import RecentSeminars from "./components/recent-seminars";
+import RecentMemberships from "./components/recent-memberships";
 
 export default function HomePage() {
   return (
@@ -55,12 +57,17 @@ export default function HomePage() {
           <CurrentPosition />
         </div>
         <div className="container-wrapper section-soft pb-6 gap-5">
+          <RecentProjects />
+        </div>
+        <div className="container-wrapper section-soft pb-6 gap-5">
           <RecentTrainings />
         </div>
         <div className="container-wrapper section-soft pb-6 gap-5">
-          <RecentProjects />
+          <RecentSeminars />
         </div>
-
+         <div className="container-wrapper section-soft pb-6 gap-5">
+          <RecentMemberships />
+        </div>
       </div>
     </div >
   );

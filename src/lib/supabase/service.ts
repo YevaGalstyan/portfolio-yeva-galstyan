@@ -1,5 +1,6 @@
 import { Education } from "@/types/education";
 import { Experience } from "@/types/experience";
+import { Membership } from "@/types/membership";
 import { Project } from "@/types/project";
 import { Seminar } from "@/types/seminar";
 import { TechStack } from "@/types/techStack";
@@ -66,6 +67,17 @@ export const fetchSeminars = async (): Promise<Seminar[]> => {
   const { data, error } = await supabase.from<string, Seminar>("Seminar").select("*").order('startDate', { ascending: false });
   if (error) {
     console.error("Supabase fetchSeminars error:", error);
+    return [];
+  }
+  return data ?? [];
+};
+
+
+// Fetch function for Memberships
+export const fetchMemberships = async (): Promise<Membership[]> => {
+  const { data, error } = await supabase.from<string, Membership>("Membership").select("*").order('startDate', { ascending: false });
+  if (error) {
+    console.error("Supabase fetchMemberships error:", error);
     return [];
   }
   return data ?? [];
