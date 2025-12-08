@@ -36,7 +36,7 @@ export default function RecentMemberships() {
                             <Skeleton className="h-4 w-full" />
                         </div>
                     ))
-                    : membership.splice(0,1).map((mem) => <MembershipOverview key={mem.id} membership={mem} />)}
+                    : membership.slice(0,1).map((mem) => <MembershipOverview key={mem.id} membership={mem} />)}
             </div>
         </div>
     )
